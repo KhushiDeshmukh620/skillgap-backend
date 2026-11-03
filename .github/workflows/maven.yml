@@ -24,3 +24,16 @@ jobs:
 
       - name: Build and test with Maven
         run: mvn -B verify --file pom.xml
+
+      - name: Show test failure details
+        if: always()
+        run: |
+          echo "===== TEST REPORTS ====="
+          if [ -d target/surefire-reports ]; then
+            for file in target/surefire-reports/*.txt; do
+              echo "===== $file ====="
+              cat "$file"
+            done
+          else
+            echo "No test reports found."
+          fi
