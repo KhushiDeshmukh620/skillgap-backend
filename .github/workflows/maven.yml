@@ -1,5 +1,5 @@
 
-name: SkillGap Backend CI
+name: SkillGap AI Backend CI
 
 on:
   push:
@@ -11,6 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: backend
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,6 +25,7 @@ jobs:
           java-version: "21"
           distribution: "temurin"
           cache: maven
+          cache-dependency-path: backend/pom.xml
 
       - name: Build and test with Maven
         run: mvn -B verify --file pom.xml

@@ -1,53 +1,29 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Java / Spring Boot
+backend/target/
+*.class
+*.log
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Node / React
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
+# IDE files
+.idea/
 .vscode/
+*.iml
 
 # Environment variables and secrets
 .env
 .env.*
 !.env.example
 
-# Local configuration overrides
+# Local configuration and credentials
+application.properties
 application-local.properties
 application-prod.properties
 
-# Logs
-*.log
-logs/
-
-# Secret and local configuration files
-application.properties
-application-*.properties
-
-# Uploaded files
+# Uploaded files and local data
 uploads/
+*.sql
+.DS_Store
